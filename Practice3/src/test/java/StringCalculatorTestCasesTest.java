@@ -21,8 +21,9 @@ public class StringCalculatorTestCasesTest {
     public void addUptoTwoNumbersWithCommaAsDelimiter() {
 
         Assert.assertEquals(1, StringCalculator.add("1"));
-        Assert.assertEquals(1+2, StringCalculator.add("1,2"));
+        Assert.assertEquals(1 + 2, StringCalculator.add("1,2"));
     }
+
     @Test
     @Order(3)
     public void addNumbersWithCommaAndNewLineAsDelimiter() {
@@ -30,18 +31,29 @@ public class StringCalculatorTestCasesTest {
         Assert.assertEquals(6, StringCalculator.add("1\n2,3"));
         Assert.assertEquals(10, StringCalculator.add("1\n2,3\n4"));
     }
+
     @Test
     @Order(4)
-    public void addNumbersWithAsMultipleDelimiter() {
+    public void addNumbersWithDelimiterGivenInString() {
 
         Assert.assertEquals(6, StringCalculator.add("//;\n1;2;3"));
     }
 
-    @Test(expected=RuntimeException.class)
+    @Test(expected = RuntimeException.class)
     @Order(5)
     public void verifyExceptionIfNegativeNumberIsPassed() {
         int addResult = StringCalculator.add("-1");
     }
 
-
+    @Test
+    @Order(5)
+    public void verifyExceptionIfMultipleNegativeNumbersArePassed() {
+        String exceptionMessage = null;
+        try {
+            int addResult = StringCalculator.add("-1,2,-3");
+        } catch (Exception e) {
+            exceptionMessage = e.getMessage();
+        }
+        Assert.assertEquals("Negatives not allowed: [-1, -3]", exceptionMessage);
+    }
 }
