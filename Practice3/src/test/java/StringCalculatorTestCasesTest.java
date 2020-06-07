@@ -46,7 +46,7 @@ public class StringCalculatorTestCasesTest {
     }
 
     @Test
-    @Order(5)
+    @Order(6)
     public void verifyExceptionIfMultipleNegativeNumbersArePassed() {
         String exceptionMessage = null;
         try {
@@ -55,5 +55,10 @@ public class StringCalculatorTestCasesTest {
             exceptionMessage = e.getMessage();
         }
         Assert.assertEquals("Negatives not allowed: [-1, -3]", exceptionMessage);
+    }
+    @Test
+    @Order(7)
+    public void skipNumberGreaterThanThousand() {
+        Assert.assertEquals(3, StringCalculator.add("1,1001,2"));
     }
 }

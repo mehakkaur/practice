@@ -37,7 +37,7 @@ public class StringCalculator {
             for (int num : intArr) {
                 if (num < 0)
                     negativeNumList.add(num);
-                else
+                else if(num<=1000)
                     result = result + num;
             }
             if (negativeNumList.size() > 0) {
