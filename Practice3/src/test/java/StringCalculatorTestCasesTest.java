@@ -33,5 +33,14 @@ public class StringCalculatorTestCasesTest {
 
         int addResult1 = sc.add("1\n2,3");
         Assert.assertEquals(6, addResult1);
+        int addResult2 = sc.add("1\n2,3\n4");
+        Assert.assertEquals(10, addResult2);
+    }
+    @Test
+    @Order(4)
+    public void addUptoTwoNumbersWithAsDelimiter() {
+
+        int addResult = sc.add("//;\n1;2;3");
+        Assert.assertEquals(6, addResult);
     }
 }
