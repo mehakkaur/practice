@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class StringCalculator {
     //First TEST THEN CODE-> TDD
@@ -18,12 +20,19 @@ public class StringCalculator {
 
                     //if string contains only "/n" but not "//", add "/n in delimiter as well".
                     if (delimiterstring.contains("//")) {
-                        String delimiterList = numbers.substring(2, numbers.indexOf("\n"));
-                        if (delimiterList.length() == 1)
-                            delimiter = delimiterList;
+                        String delimiterListString = numbers.substring(2, numbers.indexOf("\n"));
+                        if (delimiterListString.length() == 1)
+                            delimiter = delimiterListString;
+                        else{
+                            //Implemented regex to get text between  square brackets
+                            Matcher m = Pattern.compile("\\[(.*?)\\]").matcher(delimiterListString);
+                            while(m.find()) {
+                                delimiter=delimiter.concat("|"+m.group(1));
+                            }
 
+                        }
                         //update string and get substring after \n for adding numbers.
-                        numbers = numbers.substring(numbers.indexOf("\n") + 1);
+                       numbers = numbers.substring(numbers.indexOf("\n") + 1);
 
                     }
                 }

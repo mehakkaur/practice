@@ -61,4 +61,15 @@ public class StringCalculatorTestCasesTest {
     public void skipNumberGreaterThanThousand() {
         Assert.assertEquals(3, StringCalculator.add("1,1001,2"));
     }
+    @Test
+    @Order(8)
+    public void addNumbersWithDelimiterOfAnyLength() {
+        Assert.assertEquals(11, StringCalculator.add("//[%%]\n1%%7%%3"));
+    }
+    @Test
+    @Order(9)
+    public void addNumbersWithDelimiterOfAnyLengthWithMultipleDelimiters() {
+        Assert.assertEquals(13, StringCalculator.add("//[%%][!!]\n1%%7%%3!!2"));
+
+    }
 }
