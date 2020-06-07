@@ -36,11 +36,12 @@ public class StringCalculatorTestCasesTest {
 
         Assert.assertEquals(6, StringCalculator.add("//;\n1;2;3"));
     }
-//    @Test
-//    @Order(5)
-//    public void verifyExceptionIfNegativeNumbersArePassed() {
-//
-//        int addResult = StringCalculator.add("-1");
-//        Assert.assertEquals(6, addResult);
-//    }
+
+    @Test(expected=RuntimeException.class)
+    @Order(5)
+    public void verifyExceptionIfNegativeNumberIsPassed() {
+        int addResult = StringCalculator.add("-1");
+    }
+
+
 }
