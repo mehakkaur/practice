@@ -1,6 +1,6 @@
 #REstful web services
 
-user is related to "social media post"
+user is related to "social media post" resouce mapping
 
 basepath: https://localhost:8080
 #Related to user
@@ -19,3 +19,8 @@ things will take care:
 -versioning
 -exception handling
 -internalization
+
+Important points:
+-Dispatcher servlet is the fron controller handles are mapping,which controller can handle the request
+which mapping is mapped to which function, now how to send the response back (@Response body in @restConroller implementation),
+it will do jackson on the response
