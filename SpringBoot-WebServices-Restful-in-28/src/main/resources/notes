@@ -1,0 +1,21 @@
+#REstful web services
+
+user is related to "social media post"
+
+basepath: https://localhost:8080
+#Related to user
+1. Retrieve all user: GET/users
+2. create a user: POST /users/
+3. Retrieve a specific user: /Users/{id}
+4. DELETE a user: DELETE /users/{id}
+
+#Related  to post of a user
+1. retrieve all post of a user: GET/users/{id}/posts
+2. create a post for specific user: POST /user/{id}/posts
+3. get details of a specific post: GET /Users/{id}/posts/{post_id}
+
+
+things will take care:
+-versioning
+-exception handling
+-internalization
