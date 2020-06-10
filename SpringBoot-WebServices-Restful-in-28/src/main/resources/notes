@@ -3,7 +3,7 @@
 user is related to "social media post" resouce mapping
 
 basepath: https://localhost:8080
-#Related to user
+#Related to user -> all methods will go in service layer in MVC
 1. Retrieve all user: GET/users
 2. create a user: POST /users/
 3. Retrieve a specific user: /Users/{id}
@@ -24,3 +24,9 @@ Important points:
 -Dispatcher servlet is the fron controller handles are mapping,which controller can handle the request
 which mapping is mapped to which function, now how to send the response back (@Response body in @restConroller implementation),
 it will do jackson on the response
+
+
+MVC:
+Controller: will handle all the mappings
+Model: pojos like user
+service: dao service etc. will have methods handling operations nad returning data to controller requested by it.

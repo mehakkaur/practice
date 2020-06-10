@@ -1,8 +1,12 @@
-package com.SpringIn28Minutes.SpringBootWebServicesRestfulin28;
+package com.SpringIn28Minutes.SpringBootWebServicesRestfulin28.helloworld
+        ;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+
+//Controller
+//Controller ---> Requests and Receive from the <----- Service Layer -----> Model
 
 @RestController
 //@Controler+@REsponseBody

@@ -1,5 +1,6 @@
-package com.SpringIn28Minutes.SpringBootWebServicesRestfulin28;
+package com.SpringIn28Minutes.SpringBootWebServicesRestfulin28.helloworld;
 
+//Model
 public class HelloWorldBean {
     private  String message;
 
